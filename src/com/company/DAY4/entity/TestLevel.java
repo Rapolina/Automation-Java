@@ -6,6 +6,7 @@ public enum TestLevel{
     API(3),
     GUI(9);
 
+
     TestLevel(int COMLEXITY) {
         this.COMLEXITY = COMLEXITY;
     }

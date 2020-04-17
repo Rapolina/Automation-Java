@@ -1,21 +1,25 @@
 package com.company.DAY4.worker;
 
 import com.company.DAY4.entity.Result;
-import org.junit.Test;
+import com.company.DAY4.entity.Test;
 
 public abstract class Engineer {
-    protected int a = 1;
-    protected int b = 11;
-    protected int anxiety;
+    private int a = 1;
+    private int b = 11;
+    private int anxiety = 3;
     private int skill;
 
-    public void setSkill() {
-        this.skill = a + (int)(Math.random()*(b-a)) ;
+    public void setSkill(int skill) {
+        this.skill = skill ;
     }
 
 
     public int getSkill() {
         return skill;
+    }
+
+    public void setAnxiety(int anxiety) {
+        this.anxiety = anxiety;
     }
 
     public int getAnxiety() {
@@ -24,6 +28,10 @@ public abstract class Engineer {
 
 
     public Result executeTest(Test test) {
-        return null;
+        return test.apply(this);
+    }
+
+    public void  setSkillRandom(){
+        this.skill= a + (int)(Math.random()*(b-a));
     }
 }
